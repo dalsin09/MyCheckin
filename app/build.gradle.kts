@@ -1,3 +1,7 @@
+import java.util.Properties
+// Carregar o secrets.properties
+val secretProperties = Properties()
+file("../secrets.properties").inputStream().use { secretProperties.load(it) }
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -14,6 +18,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders["MAPS_API_KEYS"] = secretProperties["MAPS_API_KEYS"]?:"";
     }
 
     buildTypes {

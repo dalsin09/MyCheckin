@@ -15,9 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCheckIn"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
+
         <activity
             android:name=".ReportActivity"
             android:exported="false" />
@@ -39,7 +37,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBxiR2N1dqD8DdOuCQy50aQg6QUjhUCsPA" />
+            android:value="${MAPS_API_KEYS}" />
     </application>
 
 </manifest>
